@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Read - LAMA</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            text-align: center;
+        }
+
+        h1 {
+            margin-top: 30px;
+        }
+
+        button {
+            padding: 15px 30px;
+            margin: 10px;
+            font-size: 18px;
+            border: none;
+            border-radius: 8px;
+            background-color: #4CAF50;
+            color: white;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        .series {
+            margin-top: 30px;
+        }
+
+        .card {
+            display: inline-block;
+            width: 200px;
+            padding: 20px;
+            margin: 10px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.2);
+        }
+    </style>
+</head>
+<body>
+
+<h1>Choose What You Want to Read</h1>
+
+<button onclick="showCategory('manga')">📖 Manga</button>
+<button onclick="showCategory('lightnovel')">📚 Light Novels</button>
+
+<div id="content" class="series"></div>
+
+<script>
+function showCategory(category) {
+
+    let content = document.getElementById("content");
+
+    if (category === "manga") {
+        content.innerHTML = `
+            <a href="https://onpiecemanga.online/" target="_blank" class="card-link">
+                <div class="card">One Piece</div>
+            </a>
+
+            <a href="https://onisaga.com/manga/solo-leveling" target="_blank" class="card-link">
+                <div class="card">Solo Leveling</div>
+            </a>
+
+            <a href="https://sso.mangatown.com/manga/jujutsu_kaisen/" target="_blank" class="card-link">
+                <div class="card">Jujutsu Kaisen</div>
+            </a>
+        `;
+    }
+
+    else if (category === "lightnovel") {
+        content.innerHTML = `
+            <a href="https://www.readernovel.net/novel/classroom-of-the-elite-ln-1704/#chapters-list" target="_blank" class="card-link">
+                <div class="card">Classroom of the Elite</div>
+            </a>
+
+            <a href="https://www.webnovel.com/book/27096259406624705/catalog" target="_blank" class="card-link">
+                <div class="card">Mushoku Tensei</div>
+            </a>
+
+            <a href="https://lightnovelworld.net/novel/overlord-ln/" target="_blank" class="card-link">
+                <div class="card">Overlord</div>
+            </a>
+        `;
+    }
+
+}
+</script>
